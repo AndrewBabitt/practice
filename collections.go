@@ -67,6 +67,31 @@ func collections() {
 	delete(m, "baz")
 	fmt.Println(m)
 
-	fmt.Println("\n ==== Structs ====")
-	fmt.Println(" TBD ")
+	fmt.Println("\n ==== Struct ====")
+	fmt.Println(" only collection type that allows mixed data types ")
+	type user struct {
+		ID       int
+		UserName string
+		Email    string
+	}
+
+	var u user
+	fmt.Println(u) // fields are initialized to "zero values"
+	// int is 0 string is a blank string
+
+	u.ID = 3
+	u.UserName = "CoolUN1"
+	u.Email = "email@address.co"
+	fmt.Println(u)
+
+	//user with known values
+	u2 := user{ID: 3, UserName: "UNinInit", Email: "Init@email.add"}
+	fmt.Println(u2)
+
+	//multi line
+	u3 := user{ID: 5,
+		UserName: "multiLine",
+		Email:    "Multi@email.add",
+	}
+	fmt.Println(u3)
 }
