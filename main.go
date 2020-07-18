@@ -5,6 +5,11 @@ import (
 )
 
 func main() {
+
 	// sanity check that it compiles
 	fmt.Println("Hello, Everyone!")
+	primitives()
+	constants()
+	g()
+	collections()
 }
