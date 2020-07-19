@@ -38,4 +38,8 @@ func main() {
 	} else {
 		fmt.Println("never hit an error")
 	}
+	forLoops()
+	collectionLoops()
+	ifStatements()
+	panicSamples()
 }
