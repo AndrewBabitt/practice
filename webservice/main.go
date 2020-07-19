@@ -1,9 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/AndrewBabitt/practice/golang/webservice/models"
+)
 
 func main() {
-	var a = 4
-	fmt.Println(a)
-	fmt.Println("hello, world!")
+	u := models.User{ID: 0, Username: "User.Name1", Email: "E@mail.com"}
+	fmt.Println(u)
 }
