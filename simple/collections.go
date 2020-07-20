@@ -39,7 +39,10 @@ func collections() {
 	fmt.Println("right := slice2[4:]")
 	fmt.Println("left = ", left)
 	fmt.Println("right = ", right)
-
+	fmt.Println("slice2 value = ", slice2)
+	fmt.Println("remove item from slice")
+	slice2 = append(slice2[:1], slice2[2:]...)
+	fmt.Println(slice2)
 	fmt.Println("\n ==== Arrays ==== ")
 	fmt.Println(" fixed size collection of similar data types ")
 	var arr [3]int               //explicit createing an array with 3 elements of ints
