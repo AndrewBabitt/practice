@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 	"regexp"
 	"strconv"
@@ -16,6 +17,8 @@ type userController struct {
 
 //this allows function to act like a method
 func (uc userController) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	log.Println("recieved request to ", r.URL.Path)
+	log.Println("with method ", r.Method)
 	if r.URL.Path == "/users" {
 		//request to return all users
 		switch r.Method {
@@ -107,6 +110,7 @@ func (uc *userController) delete(id int, w http.ResponseWriter) {
 
 func (uc *userController) parseReq(r *http.Request) (models.User, error) {
 	dec := json.NewDecoder(r.Body)
+	log.Println("newDecoder dec =", *dec)
 	var u models.User
 	err := dec.Decode(&u)
 	if err != nil {
