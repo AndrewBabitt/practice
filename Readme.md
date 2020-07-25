@@ -27,6 +27,15 @@ Load testing services for comparison to see which language/framework can higher 
     - localhost:5000 (hit running docker)
 
 #### Flask
+**NOTE: this is running in docker with 3 gunicorn workers**
+![number of users](https://github.com/AndrewBabitt/practice/blob/master/python-compares/flask/performance-results/number_of_users_1595704748.png)
+
+
+![response times](https://github.com/AndrewBabitt/practice/blob/master/python-compares/flask/performance-results/response_times_(ms)_1595704748.png)
+
+
+![requests per second](https://github.com/AndrewBabitt/practice/blob/master/python-compares/flask/performance-results/total_requests_per_second_1595704748.png)
+
 ```
 Percentage of the requests completed within given times
  Type                 Name                                                           # reqs    50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100%
@@ -139,6 +148,15 @@ Percentage of the requests completed within given times
 ```
 
 #### Quart
+
+![number of users](https://github.com/AndrewBabitt/practice/blob/master/python-compares/quart/performance-results/number_of_users_1595702865.png)
+
+
+![response times](https://github.com/AndrewBabitt/practice/blob/master/python-compares/quart/performance-results/response_times_(ms)_1595702865.png)
+
+
+![requests per second](https://github.com/AndrewBabitt/practice/blob/master/python-compares/quart/performance-results/total_requests_per_second_1595702865.png)
+
 ```
 Percentage of the requests completed within given times
  Type                 Name                                                           # reqs    50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100%
@@ -248,9 +266,16 @@ Percentage of the requests completed within given times
  None                 Aggregated                                                      63975      6     10     16     24     52     85    150    250    320    340    350
 ```
 #### Tornado
-
+**TBD**
 
 #### Goland (net/http)
+![number of users](https://github.com/AndrewBabitt/practice/blob/master/webservice/performance-results/number_of_users_1595708420.png)
+
+
+![response times](https://github.com/AndrewBabitt/practice/blob/master/webservice/performance-results/response_times_(ms)_1595708420.png)
+
+
+![requests per second](https://github.com/AndrewBabitt/practice/blob/master/webservice/performance-results/total_requests_per_second_1595708420.png)
 
 
 ```
