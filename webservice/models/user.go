@@ -13,7 +13,7 @@ type User struct {
 
 var (
 	users  []*User //slice of users with pointer to user struct
-	nextID = 1
+	nextID = 0
 )
 
 func GetUsers() []*User {

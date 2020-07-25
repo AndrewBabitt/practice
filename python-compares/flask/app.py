@@ -33,4 +33,5 @@ def getUser(id):
     return 'There is no User!'
 
 
-app.run()
+if __name__ == "__main__":
+    app.run()
