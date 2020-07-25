@@ -9,4 +9,4 @@ COPY . .
 
 EXPOSE 5000
 
-CMD [ "hypercorn", "app:app" ]
+CMD [ "python", "main.py" ]
