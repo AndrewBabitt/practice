@@ -1,7 +1,9 @@
 package controllers
 
 import (
+	"log"
 	"net/http"
+	"strconv"
 
 	"github.com/AndrewBabitt/practice/gorm-example/models"
 
@@ -15,9 +17,18 @@ type UserInput struct {
 }
 
 func GetUser(c *gin.Context) {
+	log.Println("finding user by ID", c.Param("userId"))
+	var returnUser models.User
+	userID, err := strconv.Atoi(c.Param("userId"))
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"Error": "Please use numerical ID to find user"})
+	}
 	//ORM find user
-	models.GetUserById(1)
-	c.JSON(http.StatusOK, gin.H{"Status": "OK"})
+	returnUser, err = models.GetUserById(userID)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"Error": err})
+	}
+	c.JSON(http.StatusOK, gin.H{"User": returnUser})
 }
 
 func CreateUser(c *gin.Context) {
