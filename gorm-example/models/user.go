@@ -18,15 +18,16 @@ type User struct {
 }
 
 func ConnectToDB() {
-	database, err := gorm.Open("postgres", "host=myhost port=myport user=gorm dbname=gorm password=mypassword")
+	database, err := gorm.Open("postgres", "host=localhost port=5432 user=postgres dbname=postgres password=mysecretpassword sslmode=disable")
 	if err != nil {
-		panic("Failed to connect to database!")
+		msg := fmt.Sprintf("Failed to connect to database! Reasone: err", err)
+		panic(msg)
 	}
 
 	database.AutoMigrate(&User{})
 
 	DB = database
-	defer database.Close()
+
 }
 
 func CreateUser(u User) (User, error) {
@@ -45,7 +46,7 @@ func GetUserById(id int) (User, error) {
 	results := DB.Find(&user, id)
 	if results.Error != nil {
 		msg := fmt.Sprintf("Users with ID '%v' not found", id)
-		panic(msg)
+		return User{}, fmt.Errorf(msg)
 	}
 	return user, nil
 }
